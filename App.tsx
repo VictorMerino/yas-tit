@@ -48,7 +48,12 @@ const App = () => {
         // style={{ marginHorizontal: 20 }}
         data={commonCategories}
         renderItem={({ item, index }) => (
-          <CategoryItem name={item.name} image={item.image} index={index} />
+          <CategoryItem
+            name={item.name}
+            image={item.image}
+            index={index}
+            isLastItem={index === commonCategories.length - 1}
+          />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}
