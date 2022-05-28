@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
+import { useState } from 'react'
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import CategoryItem from './src/components/CategoryItem'
 import Header from './src/components/Header'
@@ -30,7 +31,7 @@ const commonCategories = [
     image: require(`./src/assets/images/smoothies.png`),
   },
 ]
-let activeItem = 'burger'
+const [activeItem, setActiveItem] = useState('Burguer')
 const styles = StyleSheet.create({
   container: {
     /* flex: 1,
