@@ -49,6 +49,9 @@ const App = () => {
         renderItem={({ item }) => (
           <CategoryItem name={item.name} image={item.image} />
         )}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={category => category.name}
       />
       <StatusBar />
     </View>
