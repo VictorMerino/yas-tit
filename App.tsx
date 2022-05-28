@@ -31,9 +31,9 @@ const commonCategories = [
     image: require(`./src/assets/images/smoothies.png`),
   },
 ]
-const [activeItem, setActiveItem] = useState('Burguer')
 
 const App = () => {
+  const [activeItem, setActiveItem] = useState('Burguer')
   return (
     <View>
       <Header />
@@ -48,6 +48,7 @@ const App = () => {
             index={index}
             isLastItem={index === commonCategories.length - 1}
             isActive={item.name === activeItem}
+            handlePress={() => setActiveItem(item.name)}
           />
         )}
         horizontal

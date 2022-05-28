@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { elevation } from '../styles/elevation'
 import { center } from '../styles/center'
 const styles = StyleSheet.create({
@@ -34,28 +34,32 @@ const CategoryItem = ({
   index,
   isLastItem,
   isActive,
+  handlePress,
 }: {
   name: String
   image: any
   index: Number
   isLastItem: Boolean
   isActive: Boolean
+  handlePress: Function
 }) => (
-  <View
-    style={[
-      styles.container,
-      styles.elevation,
-      styles.center,
-      index === 0 && { marginLeft: 20 },
-      isLastItem && { marginRight: 20 },
-      isActive && styles.active,
-    ]}
-  >
-    <View style={[styles.imageContainer, styles.center]}>
-      <Image source={image} style={styles.image} />
+  <TouchableOpacity onPress={handlePress}>
+    <View
+      style={[
+        styles.container,
+        styles.elevation,
+        styles.center,
+        index === 0 && { marginLeft: 20 },
+        isLastItem && { marginRight: 20 },
+        isActive && styles.active,
+      ]}
+    >
+      <View style={[styles.imageContainer, styles.center]}>
+        <Image source={image} style={styles.image} />
+      </View>
+      <Text style={styles.bold}>{name}</Text>
     </View>
-    <Text style={styles.bold}>{name}</Text>
-  </View>
+  </TouchableOpacity>
 )
 
 export default CategoryItem
