@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
-import Header from './components/Header'
-import Search from './components/Search'
+import Header from './src/components/Header'
+import Search from './src/components/Search'
 
 const styles = StyleSheet.create({
   container: {
