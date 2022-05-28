@@ -41,23 +41,21 @@ const CategoryItem = ({
   isLastItem: Boolean
   isActive: Boolean
 }) => (
-  <>
-    <View
-      style={[
-        styles.container,
-        styles.elevation,
-        styles.center,
-        index === 0 && { marginLeft: 20 },
-        isLastItem && { marginRight: 20 },
-        isActive && styles.active,
-      ]}
-    >
-      <View style={[styles.imageContainer, styles.center]}>
-        <Image source={image} style={styles.image} />
-      </View>
-      <Text style={styles.bold}>{name}</Text>
+  <View
+    style={[
+      styles.container,
+      styles.elevation,
+      styles.center,
+      index === 0 && { marginLeft: 20 },
+      isLastItem && { marginRight: 20 },
+      isActive && styles.active,
+    ]}
+  >
+    <View style={[styles.imageContainer, styles.center]}>
+      <Image source={image} style={styles.image} />
     </View>
-  </>
+    <Text style={styles.bold}>{name}</Text>
+  </View>
 )
 
 export default CategoryItem
