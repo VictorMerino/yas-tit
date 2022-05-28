@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.lightHeader}>Grab your</Text>
-      <Text style={styles.boldHeader}>Delicious meal</Text>
+      <Text style={styles.boldHeader}>delicious meal</Text>
     </View>
   )
 }

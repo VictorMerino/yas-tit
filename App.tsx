@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 import Header from './components/Header'
+import Search from './components/Search'
 
 const styles = StyleSheet.create({
   container: {
@@ -15,7 +16,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <Header />
-      <Text>This is just a fukin Jelou Güorl</Text>
+      <Search />
       <StatusBar />
     </View>
   )
