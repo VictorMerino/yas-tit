@@ -27,17 +27,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
-const CategoryItem = () => {
+const CategoryItem = ({ name, image }: { name: String; image: any }) => {
   return (
     <>
       <View style={[styles.container, styles.elevation, styles.center]}>
         <View style={[styles.imageContainer, styles.center]}>
-          <Image
-            source={require(`../assets/images/burger.png`)}
-            style={styles.image}
-          />
+          <Image source={image} style={styles.image} />
         </View>
-        <Text style={styles.bold}>Burguer</Text>
+        <Text style={styles.bold}>{name}</Text>
       </View>
     </>
   )
