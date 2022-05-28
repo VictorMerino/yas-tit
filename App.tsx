@@ -37,7 +37,7 @@ const App = () => {
   return (
     <View>
       <Header />
-      <Search />
+      <Search setTerm={(term: string) => setActiveItem(term)} />
       <FlatList
         // style={{ marginHorizontal: 20 }}
         data={commonCategories}
