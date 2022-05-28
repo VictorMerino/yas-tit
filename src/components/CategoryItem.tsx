@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     backgroundColor: '#fff',
   },
+  active: { backgroundColor: 'rgb(255, 199, 96)' },
   center,
   elevation,
   imageContainer: {
@@ -32,11 +33,13 @@ const CategoryItem = ({
   image,
   index,
   isLastItem,
+  isActive,
 }: {
   name: String
   image: any
   index: Number
   isLastItem: Boolean
+  isActive: Boolean
 }) => (
   <>
     <View
@@ -46,6 +49,7 @@ const CategoryItem = ({
         styles.center,
         index === 0 && { marginLeft: 20 },
         isLastItem && { marginRight: 20 },
+        isActive && styles.active,
       ]}
     >
       <View style={[styles.imageContainer, styles.center]}>

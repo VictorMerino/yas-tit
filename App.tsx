@@ -30,6 +30,7 @@ const commonCategories = [
     image: require(`./src/assets/images/smoothies.png`),
   },
 ]
+let activeItem = 'burger'
 const styles = StyleSheet.create({
   container: {
     /* flex: 1,
@@ -53,6 +54,7 @@ const App = () => {
             image={item.image}
             index={index}
             isLastItem={index === commonCategories.length - 1}
+            isActive={item.name === activeItem}
           />
         )}
         horizontal
