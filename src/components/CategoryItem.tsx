@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
     width: 35,
     height: 35,
   },
+  bold: {
+    fontWeight: 'bold',
+  },
 })
 const CategoryItem = () => {
   return (
@@ -34,7 +37,7 @@ const CategoryItem = () => {
             style={styles.image}
           />
         </View>
-        <Text>Burguer</Text>
+        <Text style={styles.bold}>Burguer</Text>
       </View>
     </>
   )
