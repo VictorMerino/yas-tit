@@ -27,10 +27,25 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
-const CategoryItem = ({ name, image }: { name: String; image: any }) => {
+const CategoryItem = ({
+  name,
+  image,
+  index,
+}: {
+  name: String
+  image: any
+  index: Number
+}) => {
   return (
     <>
-      <View style={[styles.container, styles.elevation, styles.center]}>
+      <View
+        style={[
+          styles.container,
+          styles.elevation,
+          styles.center,
+          index === 0 && { marginLeft: 20 },
+        ]}
+      >
         <View style={[styles.imageContainer, styles.center]}>
           <Image source={image} style={styles.image} />
         </View>

@@ -45,10 +45,10 @@ const App = () => {
       <Header />
       <Search />
       <FlatList
-        style={{ marginHorizontal: 20 }}
+        // style={{ marginHorizontal: 20 }}
         data={commonCategories}
-        renderItem={({ item }) => (
-          <CategoryItem name={item.name} image={item.image} />
+        renderItem={({ item, index }) => (
+          <CategoryItem name={item.name} image={item.image} index={index} />
         )}
         horizontal
         showsHorizontalScrollIndicator={false}
