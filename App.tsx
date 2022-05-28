@@ -32,18 +32,10 @@ const commonCategories = [
   },
 ]
 const [activeItem, setActiveItem] = useState('Burguer')
-const styles = StyleSheet.create({
-  container: {
-    /* flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#ececec', */
-  },
-})
 
 const App = () => {
   return (
-    <View style={styles.container}>
+    <View>
       <Header />
       <Search />
       <FlatList
