@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View } from 'react-native'
+import { StyleSheet, Text, TextInput, View } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { elevation } from '../styles/elevation'
 import { useState } from 'react'
@@ -17,15 +17,17 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
 })
-const Search = ({ setTerm }: { setTerm: Function }) => {
+const Search = ({ setTerm, activeItem }: { setTerm: Function }) => {
   const [input, setInput] = useState('')
   const handleEndEditing = () => {
     if (!input) return
     setTerm(input)
+    console.log(input)
   }
   return (
     <View style={[styles.container, styles.elevation]}>
       <FontAwesome name="search" size={25} />
+      <Text>{activeItem}</Text>
       <TextInput
         placeholder="Search here"
         style={styles.textInput}

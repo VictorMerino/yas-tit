@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar'
 import { useState } from 'react'
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import CategoryItem from './src/components/CategoryItem'
+import { View } from 'react-native'
+import Categories from './src/components/Categories'
+
 import Header from './src/components/Header'
 import Search from './src/components/Search'
 
@@ -37,23 +38,14 @@ const App = () => {
   return (
     <View>
       <Header />
-      <Search setTerm={(term: string) => setActiveItem(term)} />
-      <FlatList
-        // style={{ marginHorizontal: 20 }}
-        data={commonCategories}
-        renderItem={({ item, index }) => (
-          <CategoryItem
-            name={item.name}
-            image={item.image}
-            index={index}
-            isLastItem={index === commonCategories.length - 1}
-            isActive={item.name === activeItem}
-            handlePress={() => setActiveItem(item.name)}
-          />
-        )}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        keyExtractor={category => category.name}
+      <Search
+        setTerm={(term: string) => setActiveItem(term)}
+        activeItem={activeItem}
+      />
+      <Categories
+        categories={commonCategories}
+        activeItem={activeItem}
+        setCategory={setActiveItem}
       />
       <StatusBar />
     </View>
