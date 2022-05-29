@@ -1,7 +1,7 @@
 import { FlatList } from 'react-native'
 import CategoryItem from './CategoryItem'
 
-interface Item {
+export interface Item {
   name: String
   image: String
 }

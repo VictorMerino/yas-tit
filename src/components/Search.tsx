@@ -2,6 +2,7 @@ import { StyleSheet, Text, TextInput, View } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import { elevation } from '../styles/elevation'
 import { useState } from 'react'
+import { Item } from './Categories'
 const styles = StyleSheet.create({
   container: {
     marginTop: 12,
@@ -17,7 +18,13 @@ const styles = StyleSheet.create({
     marginLeft: 12,
   },
 })
-const Search = ({ setTerm, activeItem }: { setTerm: Function }) => {
+const Search = ({
+  setTerm,
+  activeItem,
+}: {
+  setTerm: Function
+  activeItem: Item
+}) => {
   const [input, setInput] = useState('')
   const handleEndEditing = () => {
     if (!input) return
