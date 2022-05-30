@@ -4,6 +4,7 @@ import { View } from 'react-native'
 import Categories from './src/components/Categories'
 
 import Header from './src/components/Header'
+import Restaurants from './src/components/Restaurants'
 import Search from './src/components/Search'
 import { commonCategories } from './src/db/common-categories'
 
@@ -21,6 +22,7 @@ const App = () => {
         activeItem={activeItem}
         setCategory={setActiveItem}
       />
+      <Restaurants />
       <StatusBar />
     </View>
   )
