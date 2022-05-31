@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
 import useRestaurants from '../hooks/useRestaurants'
 
 const styles = StyleSheet.create({
@@ -21,7 +21,7 @@ const Restaurants = ({ term }) => {
 
   console.log({ data, loading, error })
 
-  if (loading) return <Text style={styles.container}>Loading...</Text>
+  if (loading) return <ActivityIndicator size="large" />
   return (
     <View>
       <Text style={styles.header}>Restaurants</Text>
