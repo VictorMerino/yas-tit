@@ -24,7 +24,7 @@ const Restaurants = ({ term }) => {
     searchRestaurants(term)
   }, [term])
 
-  console.log({ data, loading, error })
+  // console.log({ data, loading, error })
 
   if (loading) return <ActivityIndicator size="large" />
   if (error)
@@ -36,7 +36,7 @@ const Restaurants = ({ term }) => {
       </View>
     )
   return (
-    <View style={styles.container}>
+    <View style={[styles.elevator, styles.container]}>
       <Text style={styles.header}>Restaurants</Text>
       <FlatList
         data={data}
