@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
+import useRestaurants from '../hooks/useRestaurants'
 
-import yelp from '../api/yelp'
 const styles = StyleSheet.create({
   container: {
     marginHorizontal: 25,
@@ -12,21 +12,7 @@ const styles = StyleSheet.create({
   },
 })
 const Restaurants = () => {
-  const searchRestaurants = async () => {
-    try {
-      const response = await yelp.get('/search', {
-        params: {
-          limit: 12,
-          term: 'Dessert',
-          location: 'Toronto',
-        },
-      })
-      console.log(response)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  searchRestaurants()
+  const [{ data, loading, error }, searchRestaurants] = useRestaurants()
   return (
     <View>
       <Text style={styles.header}>Restaurants</Text>
