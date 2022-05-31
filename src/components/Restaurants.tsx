@@ -1,5 +1,11 @@
 import { useEffect } from 'react'
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
+import {
+  ActivityIndicator,
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native'
 import useRestaurants from '../hooks/useRestaurants'
 
 const styles = StyleSheet.create({
@@ -31,6 +37,11 @@ const Restaurants = ({ term }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Restaurants</Text>
+      <FlatList
+        data={data}
+        keyExtractor={restaurant => restaurant.id}
+        renderItem={({ item }) => <Text>{item.name}</Text>}
+      />
     </View>
   )
 }
