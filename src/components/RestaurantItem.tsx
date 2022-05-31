@@ -17,15 +17,32 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     marginHorizontal: 10,
   },
+  infoContainer: {
+    flex: 1,
+  },
+  header: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  info: {
+    flexDirection: 'row',
+  },
+  rating: {
+    marginRight: 20,
+  },
+  money: {
+    color: 'gold',
+  },
 })
 const RestaurantItem = ({ restaurant }) => (
   <View style={[styles.elevation, styles.container]}>
     <Image source={{ uri: restaurant.image_url }} style={styles.image} />
-    <View>
-      <Text>{restaurant.name}</Text>
-      <View>
-        <Text>{restaurant.rating}</Text>
-        <Text>{restaurant.price}</Text>
+    <View style={styles.infoContainer}>
+      <Text style={styles.header}>{restaurant.name}</Text>
+      <View style={styles.info}>
+        <Text style={styles.rating}>{restaurant.rating}</Text>
+        <Text style={styles.money}>{restaurant.price}</Text>
       </View>
     </View>
   </View>
