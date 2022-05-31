@@ -4,11 +4,9 @@ import useRestaurants from '../hooks/useRestaurants'
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 25,
-    marginVertical: 15,
+    margin: 25,
   },
   header: {
-    marginHorizontal: 15,
     fontWeight: 'bold',
   },
 })
@@ -22,8 +20,16 @@ const Restaurants = ({ term }) => {
   console.log({ data, loading, error })
 
   if (loading) return <ActivityIndicator size="large" />
+  if (error)
+    return (
+      <View style={styles.container}>
+        <Text style={[styles.header, { color: 'red' }]}>
+          Something went wrong
+        </Text>
+      </View>
+    )
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.header}>Restaurants</Text>
     </View>
   )
