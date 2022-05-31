@@ -37,7 +37,14 @@ const styles = StyleSheet.create({
 })
 const RestaurantItem = ({ restaurant }) => (
   <View style={[styles.elevation, styles.container]}>
-    <Image source={{ uri: restaurant.image_url }} style={styles.image} />
+    <Image
+      source={
+        restaurant.image_url
+          ? { uri: restaurant.image_url }
+          : require('../assets/images/adaptive-icon.png')
+      }
+      style={styles.image}
+    />
     <View style={styles.infoContainer}>
       <Text style={styles.header}>{restaurant.name}</Text>
       <View style={styles.info}>
