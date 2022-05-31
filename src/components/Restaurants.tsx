@@ -21,6 +21,7 @@ const Restaurants = ({ term }) => {
 
   console.log({ data, loading, error })
 
+  if (loading) return <Text style={styles.container}>Loading...</Text>
   return (
     <View>
       <Text style={styles.header}>Restaurants</Text>
