@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import useRestaurants from '../hooks/useRestaurants'
 
@@ -11,8 +12,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 })
-const Restaurants = () => {
+const Restaurants = ({ term }) => {
   const [{ data, loading, error }, searchRestaurants] = useRestaurants()
+
+  useEffect(() => {
+    searchRestaurants(term)
+  }, [term])
+
+  console.log({ data, loading, error })
+
   return (
     <View>
       <Text style={styles.header}>Restaurants</Text>

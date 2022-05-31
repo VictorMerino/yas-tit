@@ -22,7 +22,7 @@ const App = () => {
         activeItem={activeItem}
         setCategory={setActiveItem}
       />
-      <Restaurants />
+      <Restaurants term={activeItem} />
       <StatusBar />
     </View>
   )
