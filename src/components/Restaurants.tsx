@@ -7,6 +7,7 @@ import {
   View,
 } from 'react-native'
 import useRestaurants from '../hooks/useRestaurants'
+import RestaurantItem from './RestaurantItem'
 
 const styles = StyleSheet.create({
   container: {
@@ -40,7 +41,7 @@ const Restaurants = ({ term }) => {
       <FlatList
         data={data}
         keyExtractor={restaurant => restaurant.id}
-        renderItem={({ item }) => <Text>{item.name}</Text>}
+        renderItem={({ item }) => <RestaurantItem restaurant={item} />}
       />
     </View>
   )
