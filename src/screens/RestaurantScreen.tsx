@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Image, Text, View } from 'react-native'
+import { Dimensions, Image, Text, View } from 'react-native'
 import { FlatList } from 'react-native-gesture-handler'
 import useRestaurant from '../hooks/useRestaurant'
 
@@ -16,16 +16,23 @@ const RestaurantScreen = ({ navigation }) => {
   if (error) return <Text>{error}</Text>
 
   if (data && data.photos) {
+    const dimensions = Dimensions.get('window')
     return (
       <View>
+        <Text style={{ margin: 5 }}>{data.name} photos:</Text>
         <FlatList
           data={data.photos}
           keyExtractor={photo => photo}
           renderItem={({ item }) => (
-            <Image source={{ uri: item }} style={{ height: 200, width: 200 }} />
+            <Image
+              source={{ uri: item }}
+              style={{
+                height: (dimensions.width * 9) / 16,
+                width: dimensions.width,
+              }}
+            />
           )}
         />
-        <Text>Restaurant {id}</Text>
       </View>
     )
   }
