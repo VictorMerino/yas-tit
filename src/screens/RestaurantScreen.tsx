@@ -1,9 +1,10 @@
 import { Text, View } from 'react-native'
 
-const RestaurantScreen = () => {
+const RestaurantScreen = ({ navigation }) => {
+  const id = navigation.getParam('id')
   return (
     <View>
-      <Text>Restaurant</Text>
+      <Text>Restaurant {id}</Text>
     </View>
   )
 }

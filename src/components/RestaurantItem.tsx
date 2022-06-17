@@ -45,7 +45,13 @@ export interface Restaurant {
   price: string
 }
 const RestaurantItem = ({ restaurant, navigation }) => (
-  <TouchableOpacity onPress={() => navigation.navigate('Restaurant')}>
+  <TouchableOpacity
+    onPress={() =>
+      navigation.navigate('Restaurant', {
+        id: restaurant.id,
+      })
+    }
+  >
     <View style={[styles.elevation, styles.container]}>
       <Image
         source={
