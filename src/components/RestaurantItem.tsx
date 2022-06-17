@@ -1,4 +1,6 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
+import { withNavigation } from 'react-navigation'
 import { elevation } from '../styles/elevation'
 const styles = StyleSheet.create({
   elevation,
@@ -42,24 +44,27 @@ export interface Restaurant {
   rating: string
   price: string
 }
-const RestaurantItem = ({ restaurant }) => (
-  <View style={[styles.elevation, styles.container]}>
-    <Image
-      source={
-        restaurant.image_url
-          ? { uri: restaurant.image_url }
-          : require('../assets/images/adaptive-icon.png')
-      }
-      style={styles.image}
-    />
-    <View style={styles.infoContainer}>
-      <Text style={styles.header}>{restaurant.name}</Text>
-      <View style={styles.info}>
-        <Text style={styles.rating}>{restaurant.rating}</Text>
-        <Text style={styles.money}>{restaurant.price}</Text>
+const RestaurantItem = ({ restaurant, navigation }) => (
+  <TouchableOpacity onPress={() => navigation.navigate('Restaurant')}>
+    <View style={[styles.elevation, styles.container]}>
+      <Image
+        source={
+          restaurant.image_url
+            ? { uri: restaurant.image_url }
+            : require('../assets/images/adaptive-icon.png')
+        }
+        style={styles.image}
+      />
+
+      <View style={styles.infoContainer}>
+        <Text style={styles.header}>{restaurant.name}</Text>
+        <View style={styles.info}>
+          <Text style={styles.rating}>{restaurant.rating}</Text>
+          <Text style={styles.money}>{restaurant.price}</Text>
+        </View>
       </View>
     </View>
-  </View>
+  </TouchableOpacity>
 )
 
-export default RestaurantItem
+export default withNavigation(RestaurantItem)
