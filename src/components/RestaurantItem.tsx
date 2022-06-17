@@ -35,6 +35,13 @@ const styles = StyleSheet.create({
     color: 'gold',
   },
 })
+
+export interface Restaurant {
+  image_url: string
+  name: string
+  rating: string
+  price: string
+}
 const RestaurantItem = ({ restaurant }) => (
   <View style={[styles.elevation, styles.container]}>
     <Image
