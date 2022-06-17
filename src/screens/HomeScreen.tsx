@@ -7,11 +7,6 @@ import Restaurants from '../components/Restaurants'
 import Search from '../components/Search'
 import { commonCategories } from '../db/common-categories'
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'black',
-  },
-})
 const HomeScreen = () => {
   const [activeItem, setActiveItem] = useState('Burguer')
   return (
@@ -31,5 +26,11 @@ const HomeScreen = () => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#F9F9FB',
+  },
+})
 
 export default HomeScreen
